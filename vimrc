@@ -33,4 +33,4 @@ set noexpandtab " Do not conver tab into spaces
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
+autocmd BufNewFile,BufRead *DPGSolver/* source ~/Codes/DPGSolver/vim/c_structs.vim
