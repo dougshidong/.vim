@@ -1,3 +1,7 @@
+set nocompatible
+set backspace=indent,eol,start
+
+syntax on
 set hlsearch " highlight searches
 set number " line numbers
 set ruler " show the cursor position all the time
@@ -10,12 +14,20 @@ nnoremap <S-Tab> :bprevious<CR>
 
 " Open the corresponding .c or .h file in the buffer
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 
 execute pathogen#infect()
+"let g:cpp_class_scope_highlight = 1 " Highlighting of class scope
+"let g:cpp_class_decl_highlight = 1
+"let g:cpp_experimental_simple_template_highlight = 1
+
 " Ignore some directories for CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/deprecated/*,*/*build*/*,*/vendor
 " Solarized colorscheme
+"set term=xterm-256color
+"set t_Co=256
 let g:solarized_termcolors=256
+"let g:solarized_use16 = 1
 set background=dark
 colorscheme solarized
 
